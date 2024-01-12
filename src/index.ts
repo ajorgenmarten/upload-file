@@ -8,10 +8,10 @@ import router from './router'
 const app = express()
 dotenv.config()
 
-import { PORT } from './config'
+import { FRONTURL, PORT } from './config'
 
 app.use(cors({
-    origin: ['http://192.168.1.49', 'http://localhost', 'http://127.0.0.1']
+    origin: ['http://localhost', 'http://127.0.0.1', FRONTURL]
 }))
 app.use(morgan('dev'))
 app.use(fileUpload({
